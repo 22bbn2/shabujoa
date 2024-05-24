@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// 사용자 페이지
+
+// 회원가입
+
+// 마이페이지
+
+// 게시판
+
+// 관리자 페이지
 Route::get('/', function () {
     return view('welcome');
 });
