@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// 메인 페이지
+Route::get('/', function () {
+    return view('main');
+});
+
 // 사용자 페이지
 
 // 회원가입
@@ -22,6 +27,4 @@ use Illuminate\Support\Facades\Route;
 // 게시판
 
 // 관리자 페이지
-Route::get('/', function () {
-    return view('welcome');
-});
+
