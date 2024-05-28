@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommunityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,15 @@ Route::get('/', function () {
 });
 
 // 사용자 페이지
+
+// 커뮤니티 페이지
+Route::get('/community', [CommunityController::class, 'index']);
+Route::get('/community/{id}', [CommunityController::class, 'show']);
+Route::get('/community/add', [CommunityController::class, 'create']);
+Route::post('/community/add', [CommunityController::class, 'store']);
+Route::get('/community/edit/{id}', [CommunityController::class, 'edit']);
+Route::post('/community/edit/{id}', [CommunityController::class, 'update']);
+Route::get('/community/delete/{id}', [CommunityController::class, 'destroy']);
 
 // 회원가입
 
