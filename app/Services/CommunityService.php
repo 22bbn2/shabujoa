@@ -21,5 +21,9 @@ class CommunityService
         return $post;
     }
 
-    // 다른 비즈니스 로직 메서드들을 추가할 수 있습니다.
+    public function getPosts($perPage = 10, $page = 1)
+    {
+        // 페이지네이션 처리를 포함한 게시물 목록을 가져오는 로직을 구현합니다.
+        return Post::paginate($perPage, ['*'], 'page', $page);
+    }
 }

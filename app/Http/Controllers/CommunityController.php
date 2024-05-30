@@ -10,7 +10,8 @@ class CommunityController extends Controller
     {
         
     }
-
+    
+    // 커뮤니티 메인 페이지
     public function index()
     {
         return view('community');
