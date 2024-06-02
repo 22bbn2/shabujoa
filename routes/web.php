@@ -22,8 +22,8 @@ Route::get('/', function () {
 // 사용자 페이지
 
 // 커뮤니티 페이지
-Route::get('/community', [CommunityController::class, 'index']);
-Route::get('/community/{id}', [CommunityController::class, 'show']);
+Route::get('/community', [CommunityController::class, 'index'])->name('community.index');
+Route::get('/community/{id}', [CommunityController::class, 'show'])->name('community.show');
 Route::get('/community/add', [CommunityController::class, 'create']);
 Route::post('/community/add', [CommunityController::class, 'store']);
 Route::get('/community/edit/{id}', [CommunityController::class, 'edit']);

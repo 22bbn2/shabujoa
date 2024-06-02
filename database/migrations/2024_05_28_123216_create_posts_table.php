@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('writerName');
             $table->string('password');
             $table->string('title');
-            $table->text('contents');
+            $table->text('content');
             $table->timestamps(); // created_at, updated_at
             $table->softDeletes(); // deleted_at 
         });

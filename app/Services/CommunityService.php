@@ -24,6 +24,12 @@ class CommunityService
     public function getPosts($perPage = 10, $page = 1)
     {
         // 페이지네이션 처리를 포함한 게시물 목록을 가져오는 로직을 구현합니다.
-        return Post::paginate($perPage, ['*'], 'page', $page);
+        return Post::getPosts($perPage, $page);
+    }
+
+    public function getPost($id)
+    {
+        // 페이지네이션 처리를 포함한 게시물 목록을 가져오는 로직을 구현합니다.
+        return Post::getPost($id);
     }
 }

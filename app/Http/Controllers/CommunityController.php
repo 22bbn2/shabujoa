@@ -4,17 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Services\CommunityService;
+
 class CommunityController extends Controller
-{
-    public function __construct()
+{   
+    protected $communityService;
+    
+    public function __construct(
+        CommunityService $communityService
+    )
     {
-        
+        $this->communityService = $communityService;
     }
     
     // 커뮤니티 메인 페이지
     public function index()
     {
-        return view('community');
+        // 커뮤니티 메인 페이지를 반환합니다.
+        $posts = $this->communityService->getPosts();
+        return view('community.main',array('posts' => $posts));
+    }
+
+    public function show($id)
+    {
+        // 커뮤니티 메인 페이지를 반환합니다.
+        $post = $this->communityService->getPost($id);
+        return view('community.show',array('post' => $post));
     }
 
     public function create()
