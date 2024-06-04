@@ -34,7 +34,7 @@ class CommunityController extends Controller
 
     public function create()
     {
-        return view('community_add');
+        return view('community.add');
     }
 
     public function edit($id)

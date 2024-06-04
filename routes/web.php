@@ -22,10 +22,12 @@ Route::get('/', function () {
 // 사용자 페이지
 
 // 커뮤니티 페이지
+// Route::resource('name', NameOfController::class); 와 같이 리소스 컨트롤러 사용해서 풀면 아래처럼 안써도 됨
 Route::get('/community', [CommunityController::class, 'index'])->name('community.index');
+Route::get('/community/add', [CommunityController::class, 'create'])->name('community.create');
 Route::get('/community/{id}', [CommunityController::class, 'show'])->name('community.show');
-Route::get('/community/add', [CommunityController::class, 'create']);
-Route::post('/community/add', [CommunityController::class, 'store']);
+
+Route::post('/community/add', [CommunityController::class, 'store'])->name('community.store');
 Route::get('/community/edit/{id}', [CommunityController::class, 'edit']);
 Route::post('/community/edit/{id}', [CommunityController::class, 'update']);
 Route::get('/community/delete/{id}', [CommunityController::class, 'destroy']);

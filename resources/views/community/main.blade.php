@@ -1,9 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .flex {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
 <div class="container">
-    <h1>게시글 목록</h1>
-    {{-- <a href="{{ route('community.create') }}" class="btn btn-primary mb-3">게시글 작성</a> --}}
+    <div class="flex">
+        <h1>게시글 목록</h1>
+        <a href="{{ route('community.create') }}" class="btn btn-primary mb-3 float-right">게시글 작성</a>
+    </div>
     <div class="list-group mt-3">
         @foreach($posts as $post)
         <a href="{{ route('community.show', ['id' => $post->id]) }}" class="list-group-item list-group-item-action">
