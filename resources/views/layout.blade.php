@@ -32,6 +32,7 @@
     <!-- 컨텐츠 영역 -->
     <div class="container mt-4">
         @yield('content')
+        @yield('script')
     </div>
 
     <!-- 푸터 -->

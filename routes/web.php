@@ -25,12 +25,12 @@ Route::get('/', function () {
 // Route::resource('name', NameOfController::class); 와 같이 리소스 컨트롤러 사용해서 풀면 아래처럼 안써도 됨
 Route::get('/community', [CommunityController::class, 'index'])->name('community.index');
 Route::get('/community/add', [CommunityController::class, 'create'])->name('community.create');
+Route::post('/community/add', [CommunityController::class, 'store'])->name('community.store');
 Route::get('/community/{id}', [CommunityController::class, 'show'])->name('community.show');
 
-Route::post('/community/add', [CommunityController::class, 'store'])->name('community.store');
-Route::get('/community/edit/{id}', [CommunityController::class, 'edit']);
-Route::post('/community/edit/{id}', [CommunityController::class, 'update']);
-Route::get('/community/delete/{id}', [CommunityController::class, 'destroy']);
+Route::get('/community/edit/{id}', [CommunityController::class, 'edit'])->name('community.edit');
+Route::post('/community/edit/{id}', [CommunityController::class, 'update'])->name('community.update');
+Route::get('/community/delete/{id}', [CommunityController::class, 'delete'])->name('community.delete');
 
 // 회원가입
 

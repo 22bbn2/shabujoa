@@ -22,15 +22,26 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    // 페이지네이션 없이 데이터 가져오기
-    public function getPosts($perPage = 10, $page = 1)
+    // 페이지네이션 처리를 포함한 게시물 목록을 가져오기
+    public function getPosts($perPage = 5, $page = 1)
     {
-        return Post::paginate($perPage, ['*'], 'page', $page);
+        return Post::orderBy('created_at', 'desc')->paginate($perPage, ['*'], 'page', $page);
     }
 
-    // 페이지네이션 없이 데이터 가져오기
+    // 게시물 가져오기
     public function getPost($id)
     {
         return Post::findOrFail($id);
+    }
+
+    public function createPost($data)
+    {
+        return Post::create($data);
+    }
+
+    // 게시물 삭제
+    public function deletePost($id)
+    {
+        return Post::destroy($id);
     }
 }

@@ -17,9 +17,8 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('writerId');
             $table->string('writerName');
-            $table->string('password');
             $table->string('title');
-            $table->text('content');
+            $table->text('contents');
             $table->timestamps(); // created_at, updated_at
             $table->softDeletes(); // deleted_at 
         });
